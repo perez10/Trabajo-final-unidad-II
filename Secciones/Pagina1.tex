@@ -1,0 +1,92 @@
+
+\begin{Large}
+\begin{center}
+\textbf{INFORME DE INSTALACIÓN DE CENTOS 6.2} \\
+\end{center}
+\end{Large}
+
+\section{Objetivos} 
+
+
+\begin{itemize}
+
+Instalar y configurar Linux CENTOS así como dominar las facilidades de administración de usuarios, procesos, dispositivos y archivos.\\
+
+\end{itemize} 
+
+\section{Recursos Necesarios} 
+
+\begin{itemize}
+\\- Una computadora con capacidad para virtualizar en hardware. 
+\\-	Un mínimo de 1 GB de RAM.
+\\-	Disco duro dedicado de por lo menos 60 GB.
+\\-	Instalador en formato ISO de CentOS 6.2.
+\\\
+\end{itemize} 
+
+\section{Marco Teórico} 
+\begin{itemize}
+\begin{center}
+\item HISTORIA DE CENTOS
+\end{center}
+\\ En 1980 fue cuando comenzó a utilizarse como sistema operativo las distribuciones CentOS y conforme aparecían errores, se corregían y a la vez se mejoraba su funcionamiento. 1984 Richard, Stallman quería desarrollar el conflicto que se presentaba en una empresa de redes la cual presentaba un bloqueo general de impresoras pero al solicitar el código de fuente no se la dieron por motivos de seguridad; entonces desde ahí empezó a trabajar en el proyecto GNU LINUX y después de un tiempo dio la definición de software libre. CentOS (acrónimo de Community ENTerprise Operating System) es un clon a nivel binario de la distribución Red Hat Enterprise Linux, compilado por voluntarios a partir del código fuente liberado por Red Hat, empresa desarrolladora de RHEL. Red Hat Enterprise Linux se compone de software libre y código abierto. Red Hat no restringe a nadie el código fuente de su sistema operativo para quienes quieran verlo e incluso utilizarlo manteniéndolo en forma pública bajo los términos de la Licencia Pública GNU y otras licencías.\\
+
+\end{itemize} 
+
+\section{Características} 
+\begin{itemize}
+\\  Algunas características en particular de este sistema operativo son las siguientes:
+\\- CentOS está orientado en lo que son los servidores
+\\-	Fácil mantenimiento
+\\-	Idoneidad para el uso a largo plazo en entornos de producción
+\\-	Entorno favorable para los usuarios y mantenedores de paquetes
+\\-	Apoyo a largo plazo de las principales
+\\-	Desarrollo activo
+\\-	La infraestructura de la comunidad
+\\-	Abierto de gestión de
+\\-	Modelo de negocio abierto.
+\end{itemize} 
+
+\begin{itemize}
+\begin{center}
+\item APOYO COMERCIAL - OFRECIDO POR UN SOCIO PROVEEDOR
+\end{center}
+\\ Estructura de archivos CentOS. Todo en un sistema Linux es un archivo; tanto el software como el hardware, se pueden acceder a los estos dispositivos de hardware como si fueran archivos pero realmente son ficheros para Linux (son archivos binarios). Como todo tiene un principio comenzaremos por el directorio llamado raíz (/) su símbolo es una diagonal, el contenido de este directorio tiene todos los archivos o ficheros de Linux, la estructura de estos mismos permiten ser reservados por el sistema y se crean al momento de la instalación del sistema operativo, en seguida se explicaran la mayoría de los archivos que esta contiene: /bin: En este directorio se ubica el código binario de los programas y comandos que pueden utilizar los usuarios del sistema. /boot: Este directorio contiene todo lo necesario para que funcione el proceso de arranque del sistema, almacena los datos que utiliza antes de que el kernel comience a ejecutar los programas.
+\\El núcleo del sistema operativo tiene la capacidad de crear dos entornos totalmente separados:
+\\- 	1. El primero está reservado para el kernel.
+\\-	2. El segundo está reservado para el resto de programas.
+\\Cada uno tiene su zona de memoria y procesos independientes gracias a esta técnica permite que haya una seguridad y estabilidad al sistema. Cuando un proceso del modo usuario necesita recursos del modo kernel hace llamadas al sistema y este le facilita todo lo que necesite. /dev: Almacena todos los dispositivos o asocia los dispositivos con los ficheros, conteniendo acceso a los dispositivos de hardware. /etc: Contiene archivos necesarios para la configuración del sistema, archivos que son propios del ordenador y se utilizan para controlar el funcionamiento de diversos programas. Deben ser archivos estáticos y/o ejecutables. Mantiene los archivos de configuración del sistema para un ordenador específico. /home: Contiene los subdirectorios que son directorios origen para cada uno de los usuarios del sistema proporcionando el lugar para almacenar sus ficheros así como los archivos de configuración propios de cada uno. /root: Los archivos utilizados por el usuario administrando el sistema. /lib: Contiene librerías compartidas necesarias para arrancar el sistema y para los ficheros ejecutables contenidos, las librerías son ficheros escritos en leguaje C. /mnt: Contiene sistemas de archivos externos que hayan sido montados, presentan recursos externos, a los que se pueden a los que se pueden acceder a través de este directorio. /opt: Se instalan complementos de los programas. /sbin: Los programas y comandos que se utilizan para la administración del sistema, se almacenan únicamente, contienen los ejecutables esenciales para el arranque, recuperación y reparación del sistema. Se utiliza como fines administrativos solo se puede ejecutar su contenido el administrador. /slv: Contiene los archivos de datos específicos para cada servicio instalado en el sistema. /tmp: Guarda los archivos de forma temporal.
+\\
+\end{itemize} 
+
+\begin{itemize}
+    \item COMANDOS BÁSICOS DE LINUX PARA CENTOS
+    \\list: listar. Es el primer comando que todos deben aprender. Nos muestra el contenido de la carpeta que le indiquemos después. Por ejemplo. Si queremos que nos muestre lo que contiene /etc:
+    \\# ls /etc
+    \\Si no ponemos nada interpretará que lo que queremos ver es el contenido de la carpeta donde estamos actualmente:
+    \\# ls
+    \\Además acepta ciertos argumentos que pueden ser interesantes. Para mostrar todos los archivos y carpetas, incluyendo los ocultos:
+    \\# ls –a
+    \\Para mostrar los archivos y carpetas junto con lo que ocupa, etc:
+    \\# ls –l
+    \\ Además se pueden observar los argumentos. Además de mostrar también los ocultos:
+    \\# ls -la
+
+\end{itemize}
+
+\begin{itemize}
+    \item Comando cd
+    \\change directory: cambiar directorio. Podemos usarlo con rutas absolutas o relativas. En las absolutas le indicamos toda la ruta desde la raíz (/). Por ejemplo, estemos donde estemos, si escribimos en consola
+
+\\# cd /etc/squid
+nos llevará a esa carpeta directamente. Del mismo modo si escribimos
+\\# cd /
+\\nos mandará a la raíz del sistema de ficheros.
+\\Las rutas relativas son relativas a algo, y ese algo es la carpeta donde estemos actualmente. Imagine que estamos en /home y queremos ir a una carpeta que se llama temporal dentro de nuestra carpeta personal. Con escribir
+\\# cd /home/indiara/temporal
+\\¿Y qué sucede si escribimos tan sólo
+\\# cd
+\\Sí, sólo "cd". Esto lo que hace es que te lleva a tu carpeta personal directamente y estemos donde estemos. Es algo realmente muy práctico, muy simple y que no todos conocen.
+
+\end{itemize}
+
